@@ -18,8 +18,12 @@ function incrementStats() {
             /**
              * ? That will return as string "328" but we need number
              * ? we can convert string to number by adding "+" sign begainning
+             * ? This will represent as data-target
              */
             const target = +counter.getAttribute('data-target')
+            /**
+             * ? This will represent as .counter innnerText
+             */
             const c = +counter.innerHTML
 
             /**
