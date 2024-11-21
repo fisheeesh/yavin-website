@@ -1,10 +1,22 @@
 function userScoll() {
     const navbar = document.querySelector('.navbar')
+    const backToTopBtn = document.querySelector('.to-top-btn')
 
     window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) navbar.classList.add('navbar-sticky')
-        else navbar.classList.remove('navbar-sticky')
+        if (window.scrollY > 50) {
+            navbar.classList.add('navbar-sticky')
+            backToTopBtn.classList.add('show')
+        }
+        else {
+            navbar.classList.remove('navbar-sticky')
+            backToTopBtn.classList.remove('show')
+        }
     })
+}
+
+function scrollToTop(){
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
 }
 
 
@@ -44,6 +56,7 @@ function incrementStats() {
     })
 }
 
-
+//Event Listeners
 document.addEventListener('DOMContentLoaded', userScoll)
 document.addEventListener('DOMContentLoaded', incrementStats)
+document.querySelector('.to-top-btn').addEventListener('click', scrollToTop)
